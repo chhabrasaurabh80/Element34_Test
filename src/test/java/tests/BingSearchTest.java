@@ -12,14 +12,17 @@ public class BingSearchTest extends BaseTest {
 
     @Test
     public void testBingSearch() {
+        Allure.step("Open bing.com and search for text-Element34 ");
         driver.get("https://www.bing.com");
         driver.findElement(By.name("q")).sendKeys("Element34");
         driver.findElement(By.name("q")).submit();
 
+        Allure.step("Validated the first link is-Element34 ");
         // Assertion 1: Verify the Search Result has link "www.element34'"
         WebElement link= driver.findElement(By.xpath("(//a[contains(@href,'www.element34')])[1]"));
         Assert.assertTrue(link.isDisplayed(), "Page does not search 'Element34'");
 
+        Allure.step("Validated the Bing Logo displyaed ");
         // Assertion 2: Verify the Bing logo is displayed
         WebElement bingo_logo= driver.findElement(By.xpath("//h1[@class='b_logo']"));
         Assert.assertTrue(bingo_logo.isDisplayed(), "Bing logo is not displayed");
