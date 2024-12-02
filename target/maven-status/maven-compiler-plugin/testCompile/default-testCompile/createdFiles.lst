@@ -1,0 +1,3 @@
+tests\BingSearchTest.class
+tests\GoogleSearchTest.class
+utils\BaseTest.class
